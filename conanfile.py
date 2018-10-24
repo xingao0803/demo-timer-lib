@@ -11,18 +11,17 @@ class TimerConan(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "compiler_args"
-    exports_sources = "src/*.h"
     requires = "Poco/1.8.0.1@pocoproject/stable"
 
     def source(self):
         self.run("git clone https://github.com/xingao0803/demo-timer-lib.git")
 
     def build(self):
-        self.run("g++ -c src/* @conanbuildinfo.args")
+        self.run("g++ -c demo-timer-lib/src/* @conanbuildinfo.args")
         self.run("ar cr libTimer.a timer.o")
 
     def package(self):
-        self.copy("*.h", dst="include", src="src")
+        self.copy("*.h", dst="include", keep_path=False)
         self.copy("*.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.dylib*", dst="lib", keep_path=False)
