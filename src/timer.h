@@ -3,4 +3,6 @@
 #include "Poco/Stopwatch.h"
 #include <iostream>
 
-void timer();
+namespace Timer {
+    void timer();
+}
