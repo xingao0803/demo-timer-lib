@@ -18,7 +18,7 @@ class TimerConan(ConanFile):
 
     def build(self):
         self.run("g++ -c demo-timer-lib/src/* @conanbuildinfo.args")
-        self.run("ar cr libTimer.a timer.o")
+        self.run("ar cr libtimer.a timer.o")
 
     def package(self):
         self.copy("*.h", dst="include", keep_path=False)
