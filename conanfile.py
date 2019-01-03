@@ -5,7 +5,6 @@ class TimerConan(ConanFile):
     name = "Timer"
     version = "1.0"
     license = "<Put the package license here>"
-    url = "<Package recipe repository url here, for issues about the package>"
     description = "<Description of Timer here>"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
