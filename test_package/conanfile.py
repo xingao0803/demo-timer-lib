@@ -6,7 +6,6 @@ from conans import ConanFile, tools
 class TimerTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "compiler_args"
-    requires = "Timer/1.0@jfrog/stable"
 
     def build(self):
         self.run("g++ ../../example.cpp @conanbuildinfo.args -o example")
