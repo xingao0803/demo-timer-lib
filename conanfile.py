@@ -10,7 +10,7 @@ class TimerConan(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "compiler_args"
-    requires = "Poco/1.8.0.1@pocoproject/stable"
+    requires = "Poco/1.9.4@pocoproject/stable"
 
     def source(self):
         self.run("git clone https://github.com/xingao0803/demo-timer-lib.git")
